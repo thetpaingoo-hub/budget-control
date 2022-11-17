@@ -1,0 +1,60 @@
+.container-fluid
+    display: flex
+    justify-content: center
+    align-items: center
+    min-height: 100vh
+    
+    .login-card
+        min-width: 400px
+        padding: 30px
+        border-radius: 20px
+        border: #111
+        box-shadow: 0px 5px 25px rgba(0, 0, 0, 0.2)
+        .title
+            text-align: center
+            label
+                margin-bottom: 30px
+                font-weight: 700
+                font-size: 1.3em
+                
+        .input-box
+            position: relative
+            width: 100%
+            margin-bottom: 35px
+            text-align: center
+            input
+                position: relative
+                width: 100%
+                padding: 10px
+                outline: none
+                border-radius: 8px
+                background: transparent
+                &:focus
+                    border-color: #a5c9ca
+                &:focus ~ label,
+                &:valid ~ label
+                    font-size: 12px
+                    top:-9px
+                    background-color: white
+                    
+            label
+                position: absolute
+                pointer-events: none
+                left: 10px
+                top: 9px
+                transition: top .2s
+                padding: 0 5px
+                font-size: 15px
+            .login-btn
+                background: #1abc9c
+                border-radius: 7px
+                border: none
+                padding: 8px
+                min-width: 150px
+                margin: auto
+                &:hover
+                    background: #16a085
+                &:active
+                    box-shadow: inset 1px 3px 10px 1px rgba(0, 0, 0, 0.2)
+input
+  border: 1px solid #cccccc

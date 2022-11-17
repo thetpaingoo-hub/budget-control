@@ -1,0 +1,59 @@
+<div class="container-fluid">
+    <nav 
+    class="m-2"
+    style="--bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='8' height='8'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;);" 
+    aria-label="breadcrumb">
+      <ol class="breadcrumb">
+        <li class="breadcrumb-item fw-semibold" aria-current="page"><a [routerLink]="['/user']">User</a></li>
+        <li class="breadcrumb-item active fw-semibold" aria-current="page">{{user.name}}
+        </li>
+      </ol>
+    </nav>
+    <div class="flex justify-start mb-3" >
+      <button class="btn-save" (click)="SaveUser()" [disabled]="isSavebtnDisabled">
+        <i class="fa fa-save" aria-hidden="true" *ngIf="!isSaveLoading"></i>
+        <div class="spinner-border ml-1 w-4 h-4" role="status" *ngIf="isSaveLoading">
+          <span class="sr-only">Loading...</span>
+        </div>
+        &nbsp;Save
+
+      </button>
+      
+    </div>
+    <div class="" >
+      <form [formGroup]="userFormGroup" (ngSubmit)="onSubmit()"> 
+        <div class="row mb-3">
+          <div class="col-sm-2">
+            <label class="c-label">User Name</label>
+          </div>
+          <div class=" col-sm-9">
+            <input type="text" [(ngModel)]="user.name" class="c-input" placeholder="Enter User Name" formControlName="name">
+          </div>   
+        </div>
+        <div class="row mb-3">
+          <div class="col-sm-2">
+            <label class="c-label">User Email</label>
+          </div>
+          <div class=" col-sm-9">
+            <input type="text" [(ngModel)]="user.email" class="c-input" placeholder="Enter User Email" formControlName="email">
+          </div>   
+        </div>
+        <div class="row mb-3">
+          <div class="col-sm-2">
+            <label class="c-label">Password</label>
+          </div>
+          <div class=" col-sm-9">
+            <input type="password" [(ngModel)]="user.password" class="c-input" placeholder="Enter Password" formControlName="password">
+          </div>   
+        </div>
+        <div class="row mb-3">
+          <div class="col-sm-2">
+            <label class="c-label">Phone</label>
+          </div>
+          <div class=" col-sm-9">
+            <input type="text" [(ngModel)]="user.phone" class="c-input" placeholder="Enter Phone Number" formControlName="phone" >
+          </div>   
+        </div>
+       </form>
+    </div>
+</div>

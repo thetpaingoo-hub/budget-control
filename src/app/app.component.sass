@@ -1,0 +1,93 @@
+@import '../assets/sass/_maxin'
+#noti-bar 
+    visibility: hidden
+    min-width: 250px
+    margin-left: -125px
+    color: #fff
+    text-align: center
+    border-radius: 6px
+    padding:8px
+    position: fixed
+    z-index: 1000
+    left: 50%
+    top: 30px
+    font-size: 14px
+     font-family: "Helvetica Neue",Helvetica,Arial,sans-serif
+    
+   
+    
+.show
+    visibility: visible!important
+    @include fadeIn()
+    transition: 0.5s
+
+.fadeOut
+    @include fadeOut("up")
+    
+.success
+    background: linear-gradient(45deg, #2ecc71 , #2ecc71 )
+.warning
+    background: linear-gradient(45deg, #e67e22 , #e67e22 )
+.info
+    background: linear-gradient(45deg, #3498db , #3498db )
+.danger
+    background: linear-gradient(45deg, #c0392b , #c0392b )
+
+// @-webkit-keyframes fadein 
+//     from 
+//         top: 0px 
+//         opacity: 0
+//     to 
+//         top: 0px 
+//         opacity: 1
+
+
+// @keyframes fadein 
+//     from 
+//         top: 0px
+//         opacity: 0
+//     to 
+//         top: 0px 
+//         opacity: 1
+
+
+// @-webkit-keyframes fadeout 
+//     from 
+//         top: 0px 
+//         opacity: 1
+//     to 
+//         top: 0px 
+//         opacity: 0
+
+
+// @keyframes fadeout 
+//     from 
+//         top: 0px 
+//         opacity: 1
+//     to 
+//         top: 0px 
+//         opacity: 0
+
+
+// .nav-link
+//     --bs-breadcrumb-divider: url(&#34;data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='9' height='9'%3E%3Cpath d='M2.5 0L1 1.5 3.5 4 1 6.5 2.5 8l4-4-4-4z' fill='currentColor'/%3E%3C/svg%3E&#34;)
+//     margin-top: 70px
+//     font-size: 13px
+//     font-weight: bold
+//     display: flex
+//     justify-content: space-between
+.breadcrumb-item.active 
+    color: #000
+
+
+.breadcrumb-item 
+    font-size: 15px
+    color: #0F2557
+
+
+.breadcrumb-item a 
+    text-decoration: none
+    color: #2F78AA
+
+
+

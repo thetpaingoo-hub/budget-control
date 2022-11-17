@@ -1,0 +1,99 @@
+@import '../../../assets/sass/_maxin'
+.header
+    padding: 10px 0
+    background-color: rgb(31, 41, 55)
+// .menu-icon
+//     padding-left: .5rem
+//     background-color: inherit
+//     vertical-align: middle
+//     color: white
+//     font-size: 1.5rem
+//     float: left
+//     cursor: pointer
+// .other-icon
+//     padding-right: 1rem
+//     background-color: inherit
+//     vertical-align: middle
+//     color: white
+//     font-size: 1.5rem
+//     float: right
+//     .bar-icon
+//         padding: 0 10px
+//         background-color: inherit
+//         cursor: pointer
+// .item-count
+//     font-size: .85rem
+//     color: white
+//     background-color: red
+//     border-radius: 50%
+//     text-align: center
+//     width: 18px
+//     height: 18px
+//     position: fixed
+   
+
+// .rotate-active:active
+//     transform: rotate(360deg)
+
+.app-title
+    background-color: inherit
+    color: white
+    font-size: 1.2rem
+
+.custom-sidenav-start
+    left: 0
+    top: 0
+   
+.nav-show
+    visibility: visible!important
+    width: 250px
+ 
+
+.custom-sidenav
+    transition: .5s
+    position: fixed
+    bottom: 0
+    z-index: 1045
+    display: -webkit-box
+    display: flex
+    -webkit-box-orient: vertical
+    -webkit-box-direction: normal
+    flex-direction: column
+    max-width: 100%
+    color: #fff
+    visibility: hidden
+    background-color: #fff
+    background-clip: padding-box
+    outline: 0
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075)
+    -webkit-transition: -webkit-transform .3s ease-in-out
+    transition: -webkit-transform .3s ease-in-out!important
+    transition: transform .3s ease-in-out!important
+    transition: transform .3s ease-in-out,-webkit-transform .3s ease-in-out!important
+
+.nav-header
+    color: #000
+    display: flex
+    -webkit-box-align: center
+    align-items: center
+    -webkit-box-pack: justify
+    justify-content: space-between
+    padding: 20px 10px
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.2)
+    .header-title
+        vertical-align: center
+
+.nav-body
+    @include scrollbars(5px, grey)
+    overflow-y: scroll
+    height: 100%
+    color: #000
+    .menu-item
+        cursor: pointer
+        padding: 15px 10px
+        &:hover
+            background-color: #84818181
+
+.menu-active
+    background-color: #84818181
+            

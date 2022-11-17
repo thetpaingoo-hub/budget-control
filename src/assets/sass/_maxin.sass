@@ -1,0 +1,234 @@
+@mixin button-scale($custom-width:'')
+    outline: none
+    padding: 6px 11px
+    border-radius: 0.25rem
+    @if $custom-width == ''
+    @else
+        width: $custom-width
+    //margin: 10px 10px 10px 0
+    cursor: pointer
+    display: inline-block
+    text-align: center
+    user-select: none
+    color: $teal-900
+    background-color: rgb(31 41 55 / 1)
+    border: solid 1px rgb(31 41 55 / 1)
+    color: white
+    // &:hover:enabled
+    //     box-shadow: 0px 4px 4px $teal-500-50
+    &:active:enabled
+       transform: scale(.98)
+    &:disabled
+         background-color: rgb(128 128 128 / 45%)
+         cursor: unset
+         border: unset
+
+@mixin button-shadow($custom-width:'')
+    outline: none
+    padding: 10px
+    border-radius: 0.35rem
+    @if $custom-width == ''
+        width: 80px
+    @else
+        width: $custom-width
+    margin: 10px 10px 10px 0
+    cursor: pointer
+    display: inline-block
+    text-align: center
+    user-select: none
+    color: $teal-900
+    background-color: $teal-500
+    border: solid 1px $teal-600
+    // &:hover:enabled
+    //     box-shadow: 0px 4px 4px $teal-500-50
+    &:active:enabled
+        box-shadow: 0px 4px 8px $teal-500-50
+    &:disabled
+         background-color: rgb(128 128 128 / 45%)
+         cursor: unset
+         border: unset
+
+@mixin button-outline($custom-width:'')
+    outline: none
+    padding: 10px
+    border-radius: 0.35rem
+    @if $custom-width == ''
+        width: 80px
+    @else
+        width: $custom-width
+    margin: 10px 10px 10px 0
+    cursor: pointer
+    display: inline-block
+    text-align: center
+    user-select: none
+    color: $teal-900
+    background-color: inherit
+    border: solid 1px $teal-600
+    &:hover
+        box-shadow: 0px 4px 4px $teal-500-50
+    &:active
+        transform: scale(.97)
+
+@mixin text-box()
+    outline: none
+    padding: 5px
+    border-radius: 0.25rem
+    min-width: 200px
+    &:focus
+        border: solid 1px #676666
+
+// $teal-50    : rgb(240 253 250)
+// $teal-100   : rgb(204 251 241)
+// $teal-200   : rgb(153 246 228)
+// $teal-300   : rgb(94 234 212)
+// $teal-400   : rgb(45 212 191)
+// $teal-500   : rgb(20 184 166)
+// $teal-500   : rgb(20 184 166)
+// $teal-600   : rgb(13 148 136)
+// $teal-700   : rgb(15 118 110)
+// $teal-800   : rgb(17 94 89)
+// $teal-900   : rgb(19 78 74)
+// $teal-50-50     : rgb(240 253 250/50%)
+// $teal-100-50    : rgb(204 251 241/50%)
+// $teal-200-50    : rgb(153 246 228/50%)
+// $teal-300-50    : rgb(94 234 212/50%)
+// $teal-400-50    : rgb(45 212 191/50%)
+// $teal-500-50    : rgb(20 184 166/50%)
+// $teal-500-50    : rgb(20 184 166/50%)
+// $teal-600-50    : rgb(13 148 136/50%)
+// $teal-700-50    : rgb(15 118 110/50%)
+// $teal-800-50    : rgb(17 94 89/50%)
+// $teal-900-50    : rgb(19 78 74/50%)
+
+$teal-50    : #fff1f2
+$teal-100   : #ffe4e6
+$teal-200   : #fecdd3
+$teal-300   : #fda4af
+$teal-400   : #fb7185
+$teal-500   : #f43f5e
+$teal-600   : #e11d48
+$teal-700   : #be185d
+$teal-800   : #9f1239
+$teal-900   : #881337
+$teal-50-50     : rgb(240 253 250/50%)
+$teal-100-50    : rgb(204 251 241/50%)
+$teal-200-50    : rgb(153 246 228/50%)
+$teal-300-50    : rgb(94 234 212/50%)
+$teal-400-50    : rgb(45 212 191/50%)
+$teal-500-50    : rgb(20 184 166/50%)
+$teal-500-50    : rgb(20 184 166/50%)
+$teal-600-50    : rgb(13 148 136/50%)
+$teal-700-50    : rgb(15 118 110/50%)
+$teal-800-50    : rgb(17 94 89/50%)
+$teal-900-50    : rgb(19 78 74/50%)
+
+@mixin fadeIn($direction:"down", $defaultTransform: "") 
+  $name: unique-id()
+  $transform: 0px
+  @if $direction=="down" 
+    $name: "fadeInDown-" + $name
+    $transform: -20px
+  
+  @if $direction=="up" 
+    $name: "fadeInUp-" + $name
+    $transform: 20px
+  
+  animation: #{$name} 0.2s ease-in 0s 1 forwards
+  pointer-events: all
+  @keyframes #{$name} 
+    0% 
+      visibility: hidden
+      opacity: 0
+      transform: translateY($transform) #{$defaultTransform}
+    
+    100% 
+      visibility: visible
+      opacity: 1
+      transform: translateY(0) #{$defaultTransform}
+    
+  
+
+
+/* fadeOut elements down or up, optionally set default transformations which should always be applied */
+
+@mixin fadeOut($direction:"down", $defaultTransform: "") 
+  $name: unique-id()
+  $transform: 0px
+  @if $direction=="down" 
+    $name: "fadeOutDown-" + $name
+    $transform: 20px
+  
+  @if $direction=="up" 
+    $name: "fadeOutUp-" + $name
+    $transform: -20px
+  
+  animation: #{$name} 0.2s ease-in 0s 1 forwards
+  pointer-events: none
+  @keyframes #{$name} 
+    0% 
+      visibility: visible
+      opacity: 1
+      transform: translateY(0) #{$defaultTransform}
+    
+    100% 
+      visibility: hidden
+      opacity: 0
+      transform: translateY($transform) #{$defaultTransform}
+    
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) 
+  // For Google Chrome
+  &::-webkit-scrollbar 
+    width:  $size
+    height: $size
+  
+
+  &::-webkit-scrollbar-thumb 
+    background: $foreground-color
+    border-radius: .25rem
+    box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075)
+
+  &::-webkit-scrollbar-track 
+    background: $background-color
+  
+
+  // For Internet Explorer
+  & 
+    scrollbar-face-color: $foreground-color
+    scrollbar-track-color: $background-color
+  
+@mixin custom-input()
+  .c-label
+    padding: 0.25em 0.5em
+    font-size: 16px
+    font-size: max(16px, 1em)
+    font-family: inherit
+    background-color: #fff
+  .c-input 
+    width: 100%
+    font-size: 16px
+    font-size: max(16px, 1em)
+    font-family: inherit
+    padding: 0.25em 0.5em
+    background-color: #fff
+    border: 2px solid rgba(0, 0, 0, .5)
+    border-radius: 4px
+    transition: 180ms box-shadow ease-in-out
+    &:not(textarea)
+      line-height: 1
+      height: 2.25rem
+    &:read-only
+      border-style: dotted
+      cursor: not-allowed
+      color: #777
+    &:disabled
+      --input-border: #f6f2f2
+      background-color: #f6f2f2!important
+      cursor: not-allowed
+    
+    
+  textarea.c-input 
+    resize: vertical
+
+
+
+

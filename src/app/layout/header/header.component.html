@@ -1,0 +1,39 @@
+<div class="flex justify-between header" *ngIf="isLogin">
+    <span class="menu-icon">
+        <i class="fa fa-bars pl-2 text-xl text-white cursor-pointer"  
+        (click)="openNav()"
+        aria-hidden="true" data-bs-toggle="offcanvas" data-coreui-target="#offcanvasExample" aria-controls="offcanvasExample"></i>
+        <span class="app-title pl-2">Budget Control System</span>
+    </span>
+    <span class="other-icon">
+        <span class="pr-2 text-white">Sign Out</span>
+    </span>
+    
+
+</div>
+  
+
+  <div class="custom-sidenav custom-sidenav-start" id="custom-nav">
+    <div class="nav-header">
+        <span class="header-title text-xl" >Logo</span>
+        <i class="fa fa-close cursor-pointer" (click)="closeNav()" aria-hidden="true"></i>
+    </div>
+    <div class="nav-body text-baase">
+        <div class="menu">
+            <div class="menu-item" (click)="menuClick(data)" *ngFor="let data of menus;" [ngClass]="{'menu-active': data.active}">
+                <i class="{{data.icon}}" aria-hidden="true"></i> &nbsp;{{data.name}}
+            </div>
+            <!-- <div class="menu-item" >
+                <i class="fa fa-home" aria-hidden="true"></i> &nbsp;Sheet
+            </div>
+            <div class="menu-item" >
+                <i class="fa fa-home" aria-hidden="true"></i> &nbsp;Dashboard
+            </div> -->
+        </div>
+        
+    </div>
+    <div class="nav-footer"></div>
+  </div>
+
+  
+
